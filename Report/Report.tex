@@ -4,7 +4,8 @@
     tocloft,
     graphicx,
     hyperref,
-    float
+    float,
+    minted
 }
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[backend=biber]{biblatex}
@@ -30,6 +31,9 @@
 \addbibresource{References.bib}
 % Print references without being cited in-text
 \nocite{*}
+
+% Color for code appendix background
+\definecolor{LightGray}{gray}{0.95}
 
 % Title page
 \title{Predicting the Next Defensive Player of the Year in the NBA}
@@ -229,10 +233,15 @@
     A limitation of our model is that the final predictions are not restricted such that the vote shares sum to one. This is an issue if the specific vote share itself if highly desired to be accurate. In our case, we cared more about the relative rankings of the players in terms of the order they will finish in the voting. In the future, we would like to refine the model to address this limitation and thus produce more realistic vote shares.
 
 
-    \section{Code \& Data}
-    The data files and a Python notebook containing the code used to produce all of the analyses can be obtained from \url{https://github.com/alexlegresley/STAT482-Capstone}.
-
-
     \printbibliography[heading=bibnumbered]
+
+
+    \section{Code \& Data}
+    The data files and a Python notebook containing the code used to produce all of the analyses with explanatory code comments can be obtained from \url{https://github.com/alexlegresley/STAT482-Capstone}. The code is also listed below in the \nameref{CodeAppendix}.
+
+
+    \section{Code Appendix}
+    \label{CodeAppendix}
+    \inputminted[breaklines,linenos,tabsize=4,frame=lines,framesep=2mm,bgcolor=LightGray]{python}{Code.py}
     
 \end{document}
